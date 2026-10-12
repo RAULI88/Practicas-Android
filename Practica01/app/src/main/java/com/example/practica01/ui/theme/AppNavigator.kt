@@ -1,4 +1,4 @@
-package com.example.practica01.ui.theme
+package com.example.practica01 // Ajusta si lo tienes dentro de ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,9 +6,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-
-import com.example.practica01.FirstScreen
-import com.example.practica01.SecondScreen
 
 @Composable
 fun AppNavigation() {
@@ -18,20 +15,22 @@ fun AppNavigation() {
         navController = navController,
         startDestination = "first_screen"
     ) {
-        // Pantalla 1 - FirstScreen
         composable("first_screen") {
             FirstScreen(onNavigateToSecondScreen = { texto ->
                 navController.navigate("second_screen/$texto")
             })
         }
 
-        // Pantalla 2 con argumento - SecondScreen
         composable(
             route = "second_screen/{texto}",
             arguments = listOf(navArgument("texto") { type = NavType.StringType })
         ) { backStackEntry ->
             val textoRecibido = backStackEntry.arguments?.getString("texto") ?: ""
-            SecondScreen(mensaje = textoRecibido)
+            SecondScreen(
+                mensaje = textoRecibido,
+                // RETO: Ejecutamos el popBackStack para regresar
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
     }
 }
