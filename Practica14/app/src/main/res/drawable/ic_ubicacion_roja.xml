@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RETO Fase 1: ícono de ubicación GPS en color rojo (Vector Asset) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#33FF0000"
+        android:pathData="M1,12a11,11 0 1,0 22,0a11,11 0 1,0 -22,0" />
+    <path
+        android:fillColor="#FFE53935"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M5,12a7,7 0 1,0 14,0a7,7 0 1,0 -14,0" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M10,12a2,2 0 1,0 4,0a2,2 0 1,0 -4,0" />
+</vector>
